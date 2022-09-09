@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Dados } from './modules/dados';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'class_proj';
+
+  dados: Dados = new Dados();
+
+  increase(){
+    this.dados.numero++;
+  }
 }

@@ -1,0 +1,8 @@
+div{
+    display: grid;
+    place-items: center;
+}
+input{
+    padding: 8px;
+    margin: 15px;
+}
