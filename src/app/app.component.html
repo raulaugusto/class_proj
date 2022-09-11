@@ -1,8 +1,5 @@
 <div>
   <p>test commit</p>
-  <input
-    type="number"
-    [value]="[(dados.numero)]"
-  />
-  <input type="button" value="Increase" (click)="increase()">
+  <input type="button" value="Incrementa" (click)="increase()" />
+  <input type="number" (change)="dados.numero=$any($event.target).value" [value]="[(dados.numero)]" />
 </div>
