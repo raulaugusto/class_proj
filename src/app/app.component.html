@@ -1,5 +1,5 @@
 <div>
-  <p>test commit</p>
+  <p>O numero {{ dados.numero }}</p>
   <input type="button" value="Incrementa" (click)="increase()" />
   <input type="number" (change)="dados.numero=$any($event.target).value" [value]="[(dados.numero)]" />
 </div>
