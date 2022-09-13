@@ -1,5 +1,18 @@
 <div>
-  <p>O numero {{ dados.numero }}</p>
-  <input type="button" value="Incrementa" (click)="increase()" />
-  <input type="number" (change)="dados.numero=$any($event.target).value" [value]="[(dados.numero)]" />
-</div>
+  <form>
+  <label for="nome">Nome: </label>
+  <input type="text" name="nome" [(ngModel)]="cliente.Nome">
+  <label for="cpf">CPF: </label>
+  <input type="text" name="cpf" [(ngModel)]="cliente.CPF">
+  <label for="cep">CEP: </label>
+  <input type="text" name="cep" [(ngModel)]="cliente.CEP" (blur)="VerificaCEP()">
+  <label for="endereco">Endereço: </label>
+  <input type="text" name="endereco" [(ngModel)]="cliente.Endereco">
+  <div *ngIf="!cliente.CPFValido()">
+  CPF Inválido
+  </div>
+  <div>
+  <input type="button" (click)="salvar()" value="Salvar" [disabled]="!cliente.CPFValido()" />
+  </div>
+  </form>
+ </div>
